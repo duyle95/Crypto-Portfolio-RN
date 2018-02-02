@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 
 import CoinDetail from './CoinDetail';
 import * as actions from '../actions';
-import { Spinner } from './common';
+import { Spinner, Header } from './common';
 
 class CoinList extends Component {
   componentWillMount() {
@@ -29,9 +30,14 @@ class CoinList extends Component {
     );
   }
 
+
   render() {
     return (
       <ScrollView>
+        <Header
+          headerText='Crypto Market'
+          onPress={() => Actions.auth()}
+        />
         {this.renderFirstTime()}
       </ScrollView>
     );

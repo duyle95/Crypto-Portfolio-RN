@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchCoins = () => async dispatch => {
-  const url = 'https://api.coinmarketcap.com/v1/ticker/?limit=50';
+  const url = 'https://api.coinmarketcap.com/v1/ticker/?limit=1';
   const res = await axios.get(url);
 
   dispatch({
