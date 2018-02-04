@@ -4,6 +4,7 @@ import { Icon } from 'react-native-elements';
 
 import CoinList from './components/CoinList';
 import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
 
 const RouterComponent = () => {
   return (
@@ -13,7 +14,8 @@ const RouterComponent = () => {
           <Scene key='coinList' component={CoinList} />
         </Scene>
         <Scene key='auth'>
-          <Scene key='login' component={LoginForm} title='Login to App' back />
+          <Scene key='login' component={LoginForm} title='Login' back />
+          <Scene key='signUp' component={SignUpForm} title='Sign up' />
         </Scene>
       </Scene>
     </Router>

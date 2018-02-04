@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { FormLabel, FormInput, Button } from 'react-native-elements';
 
-class LoginForm extends Component {
+class SignUpForm extends Component {
   render() {
     return (
       <View>
@@ -13,31 +13,30 @@ class LoginForm extends Component {
         <FormLabel>Password</FormLabel>
         <FormInput />
 
-        <Button
-          title='Login'
-          buttonStyle={styles.loginButtonStyle}
-        />
+        <FormLabel>Confirm Password</FormLabel>
+        <FormInput />
 
-        <Text
-          style={styles.signUpLinkStyle}
-          onPress={() => Actions.signUp()}
-        >
-          No account? Tap here to sign up.
-        </Text>
+        <Button
+          title='Sign Up'
+          buttonStyle={styles.signUpButtonStyle}
+        />
+        <Button
+          title='Cancel'
+          onPress={() => Actions.home()}
+          buttonStyle={styles.cancelButtonStyle}
+        />
       </View>
     );
   }
-};
+}
 
 const styles = {
-  signUpLinkStyle: {
-    color: 'blue',
-    marginLeft: 15,
-    marginTop: 15
-  },
-  loginButtonStyle: {
+  signUpButtonStyle: {
     backgroundColor: 'blue'
+  },
+  cancelButtonStyle: {
+    marginTop: 10
   }
 }
 
-export default LoginForm;
+export default SignUpForm;
